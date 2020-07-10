@@ -21,7 +21,7 @@ def UserRegisterAPIView(request):
 		user.set_password(data['password'])
 		user.save()
 		token = Token.objects.create(user = user).key
-		return Response({'Token':token}, status = status.HTTP_200_OK)
+		return Response({'token':token}, status = status.HTTP_200_OK)
 	return Response({'errors':serializer.errors}, status = status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
@@ -32,11 +32,11 @@ def UserLogoutAPIView(request):
 
 
 @api_view(['GET'])
-@permission_classes([permissions.IsAuthenticated])
+@permission_classes([permissions.AllowAny])
 def TaskListAPIView(request):
 	serializer = []
 	for t in settings.TASKS:
-		data = Task.objects.filter(task_type = t[0])
+		data = Task.objects.filter(task_type = t[0], active=True)
 		serializer.append({
 			'task_type':t[0],
 			'tasks':TaskSerializer(data, many = True, context = {'user':request.user}).data
@@ -44,7 +44,7 @@ def TaskListAPIView(request):
 	return Response(serializer, status = status.HTTP_200_OK)
 
 @api_view(['GET'])
-@permission_classes([permissions.IsAuthenticated])
+@permission_classes([permissions.AllowAny])
 def TaskSingleAPIView(request, slug):
 	data = Task.objects.filter(slug = slug)
 	if(len(data)!=0):
@@ -64,14 +64,14 @@ def SendFlagAPIView(request):
 			res = Results.objects.get(user = request.user)
 			res.points += task[0].cost
 			res.save()
-		return Response({'answer':'Flag is correct'},status = status.HTTP_200_OK)
+		return Response({'answer':'Flag is correct','status':True},status = status.HTTP_200_OK)
 	else:
 		ob = Answer(user = request.user, user_flag = request.data['flag'], right = False)
 		ob.save()
-		return Response({'answer':'Flag is not correct'},status = status.HTTP_200_OK)
+		return Response({'answer':'Flag is not correct','status':False},status = status.HTTP_200_OK)
 
 @api_view(['GET'])
-@permission_classes([permissions.IsAuthenticated])
+@permission_classes([permissions.AllowAny])
 def GetScoreBoardAPIView(request):
 	users = User.objects.all()
 	data=[]

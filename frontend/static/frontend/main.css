@@ -1,0 +1,79 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+.bg-imerald{
+	background-color: #00A86B;
+}
+.navbar-imerald{
+	color: white !important;
+}
+.navbar-imerald a{
+	color: white !important;
+}
+.navbar-imerald .navbar-toggler{
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+}
+.navbar-imerald .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+.nav-link{
+	font-size: 1.25rem;
+}
+.navbar-imerald .form-inline button{
+	font-size: 1.1rem;
+}
+.navbar-imerald .form-inline input{
+	font-size: 1.1rem;
+}
+.navbar-brand{
+	font-size: 1.65rem;
+}
+#AuthLoginContainer{
+	color:#51C878;
+}
+#AuthLoginContainer button{
+	font-size: 1.1rem;
+}
+.btn-imerald{
+	color: #fff;
+    background-color: #51C878;
+    border-color: #51C878;
+}
+.bad_flag::-webkit-input-placeholder{
+	color: #DC3545;
+}
+.good_flag::-webkit-input-placeholder{
+	color: #28A745
+}
+.task-card .card-header{
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.25rem;
+	background-color: #00A86B !important;
+}
+.task-card a{
+	text-decoration: none;
+}
+.task-card .card-body{
+	color: #51C878;
+}
+.crossed-text{
+	text-decoration: line-through;
+}
+.single-task{
+	color: #00A86B;
+}
+.single-task a{
+	text-decoration: none;
+}
+.table-imerald{
+	color: #fff;
+	background-color: #00A86B;
+}
+.table-imerald th, .table-imerald td{
+	border-color: #51C878;
+	border-width: 5px;
+}

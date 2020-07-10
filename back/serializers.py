@@ -16,11 +16,12 @@ class TaskSerializer(serializers.ModelSerializer):
 			'solved'
 		]
 	def get_solved(self, instance):
-		ob = Answer.objects.filter(task = instance, right = True, user = self.context['user'])
-		if(len(ob)!=0):
-			return(True)
-		else:
-			return(False)
+		print(self.context['user'])
+		if(not self.context['user'].is_anonymous):
+			ob = Answer.objects.filter(task = instance, right = True, user = self.context['user'])
+			if(len(ob)!=0):
+				return(True)
+		return(False)
 
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
