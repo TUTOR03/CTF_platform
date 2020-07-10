@@ -2,7 +2,8 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.dispatch import receiver
-from django.db.models.signals import pre_save, post_save
+from django.db.models.signals import pre_save, post_save, post_delete
+import os
 
 def get_file_path(instance, filename):
 	return('{0}/{1}_{2}'.format(instance.task.task_type,instance.task.title,filename))
@@ -52,5 +53,9 @@ def add_slug(sender, instance, **kwargs):
 def set_points(sender,instance,created,**kwargs):
 	if(created):
 		Results.objects.create(points = 0, user = instance)
+
+@receiver(post_delete, sender = File)
+def delete_file(sender, instance, **kwargs):
+	os.remove(instance.file.path)
 
 
