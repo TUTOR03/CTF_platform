@@ -15,8 +15,11 @@ class MainPage extends Component{
 			<div className='container mt-5'>
 				{this.props.tasks.map((ob,idx)=>{return(
 					<div className='row mb-4' key={idx}>
+						<div className='col-sm-12'>
+							<h1 className='task-type'>{ob.task_type}</h1>
+						</div>
 						{ob.tasks.map((data,id)=>{return(
-							<div className='col-lg-2 col-md-3 col-sm-6' key={id}>
+							<div className='col-lg-3 col-md-4 col-sm-6 mt-3' key={id}>
 								<div className='card task-card'>
 									<Link to={`/site/task/${data.slug}`}>
 										<div className={`card-header ${data.solved ? 'crossed-text':''}`}>

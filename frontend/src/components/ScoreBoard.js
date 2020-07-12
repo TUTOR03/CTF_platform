@@ -47,7 +47,7 @@ class ScoreBoard extends Component{
 											<th scope="row">{idx+1}</th>
 											<td>{ob.points}</td>
 											<td>{ob.username}</td>
-											<td>{ob.last_flag}</td>
+											<td>{ob.last_flag=='None'? '-':ob.last_flag}</td>
 								    	</tr>
 									)})}
 							   	</tbody>
