@@ -14,7 +14,8 @@ class MainPage extends Component{
 			!this.props.is_loading ?
 			<div className='container mt-5'>
 				{this.props.tasks.map((ob,idx)=>{return(
-					<div className='row mb-4' key={idx}>
+					ob.tasks.length!=0 ? 
+					(<div className='row mb-4' key={idx}>
 						<div className='col-sm-12'>
 							<h1 className='task-type'>{ob.task_type}</h1>
 						</div>
@@ -32,7 +33,7 @@ class MainPage extends Component{
 								</div>
 							</div>
 						)})}
-					</div>
+					</div>):''
 				)})}
 			</div>
 			:

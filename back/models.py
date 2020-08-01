@@ -18,7 +18,7 @@ class Task(models.Model):
 	slug = models.SlugField(allow_unicode = True, unique = True, null = True, blank = True)
 
 	def __str__(self):
-		return(f'{self.title}')
+		return(f'{self.title} {self.cost}')
 
 class Answer(models.Model):
 	task = models.ForeignKey(Task, on_delete = models.CASCADE, null = True, blank = True)
