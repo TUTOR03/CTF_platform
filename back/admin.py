@@ -5,5 +5,4 @@ from . import models
 
 admin.site.register(models.Task)
 admin.site.register(models.Answer)
-admin.site.register(models.Results)
 admin.site.register(models.File)

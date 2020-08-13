@@ -30,13 +30,6 @@ class Answer(models.Model):
 	def __str__(self):
 		return(f'{self.user.username} - {self.user_flag} - {self.datetime.strftime("%d.%m.%y %H:%M:%S")}')
 
-class Results(models.Model):
-	user = models.ForeignKey(User, on_delete = models.CASCADE, null = False, blank = False)
-	points = models.DecimalField(decimal_places = 0, max_digits = 4, null = False, blank = False)
-
-	def __str__(self):
-		return(f'{self.user.username} - {self.points}')
-
 class File(models.Model):
 	task = models.ForeignKey(Task,on_delete = models.CASCADE, related_name = 'files', null = False, blank = False)
 	file = models.FileField(upload_to = get_file_path, null = False, blank = False)
@@ -48,12 +41,7 @@ class File(models.Model):
 def add_slug(sender, instance, **kwargs):
 	if(not instance.slug):
 		instance.slug = instance.title.replace(' ','-')
-
-@receiver(post_save, sender = User)
-def set_points(sender,instance,created,**kwargs):
-	if(created):
-		Results.objects.create(points = 0, user = instance)
-
+		
 @receiver(post_delete, sender = File)
 def delete_file(sender, instance, **kwargs):
 	os.remove(instance.file.path)
