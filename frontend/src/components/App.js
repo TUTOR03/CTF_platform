@@ -23,11 +23,6 @@ class App extends Component{
 		let options={
 			method:'GET'
 		}
-		if(localStorage.token!=undefined){
-			options.headers={
-				Authorization:`Token ${localStorage.token}`
-			}
-		}
 		fetch(endpoint, options)
 		.then(response => response.json())
 		.then(responseData =>{
