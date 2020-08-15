@@ -36,7 +36,7 @@ class App extends Component{
 		.catch(error => console.log('Error: ' + error))
 	}
 	UpdateToken(){
-		this.setState({isAuth: localStorage.token ? true:false})
+		this.setState({isAuth: localStorage.token ? true:false},()=>{this.GetTasks()})
 	}
 	componentDidMount(){
 		this.setState({is_loading:true})
