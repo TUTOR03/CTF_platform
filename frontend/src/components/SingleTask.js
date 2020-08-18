@@ -43,7 +43,7 @@ class SingleTask extends Component{
 						<div className='col-lg-7 col-sm-12'>
 							<h1 className={`font-weight-bold ${task.data.solved ? 'crossed-text':''}`}>{task.data.title}</h1>
 							<h4 className={`font-weight-bold ${task.data.solved ? 'crossed-text':''}`}>{task.data.cost}</h4>
-							<h3>{task.data.text}</h3>
+							<h3><div dangerouslySetInnerHTML={{ __html: task.data.text }}/></h3>
 							{task.files.map((ob,idx)=>{return(
 								<h4 key={idx}><a href={this.GetImageURL(ob)} download>Файл</a></h4>
 							)})}

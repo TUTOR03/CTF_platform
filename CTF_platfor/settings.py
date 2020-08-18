@@ -139,4 +139,8 @@ TASKS = [
     ('stegano','stegano'),
     ('pwn','pwn'),
     ('ppc','pcc'),
+    ('crypto','crypto'),
+    ('osint','osint'),
+    ('web','web'),
+    ('forensics','forensics')
 ]
