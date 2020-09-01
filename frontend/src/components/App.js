@@ -6,6 +6,7 @@ import Login from './Login'
 import Register from './Register'
 import SingleTask from './SingleTask'
 import ScoreBoard from './ScoreBoard'
+import InfoPage from './InfoPage'
 
 class App extends Component{
 	constructor(props){
@@ -52,6 +53,7 @@ class App extends Component{
 						<Route exact path='/site/login'render={() => <Login isAuth={this.state.isAuth} UpdateToken={this.UpdateToken}/>} />
 						<Route exact path='/site/register'render={() => <Register isAuth={this.state.isAuth} UpdateToken={this.UpdateToken}/>} />
 						<Route exact path='/site/scoreboard' render={() => <ScoreBoard/>}/>
+						<Route exact path='/site/info' render={() => <InfoPage/>}/>
 					</Switch>
 				</BrowserRouter>
 		);
