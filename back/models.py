@@ -39,7 +39,6 @@ class File(models.Model):
 
 @receiver(pre_save, sender = Task)
 def add_slug(sender, instance, **kwargs):
-	instance.text = instance.text.replace('"','&quot;').replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')
 	if(not instance.slug):
 		instance.slug = instance.title.replace(' ','-')
 		

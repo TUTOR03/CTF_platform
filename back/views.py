@@ -70,7 +70,7 @@ def SendFlagAPIView(request):
 @api_view(['GET'])
 @permission_classes([permissions.AllowAny])
 def GetScoreBoardAPIView(request):
-	users = User.objects.all()
+	users = User.objects.filter(is_staff = False)
 	data=[]
 	for user in users:
 		answers = Answer.objects.filter(right = True, user = user).order_by('datetime')

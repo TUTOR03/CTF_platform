@@ -25,8 +25,8 @@ SECRET_KEY = '-=f6wlph6y1%c-8&&hfq7+s%h4(-n7g+^h5p%gqfu-)yl^$0s7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['80.240.25.179']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['80.240.25.179']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -139,6 +139,7 @@ TASKS = [
     ('stegano','stegano'),
     ('pwn','pwn'),
     ('ppc','pcc'),
+    ('joy','joy'),
     ('crypto','crypto'),
     ('osint','osint'),
     ('web','web'),
