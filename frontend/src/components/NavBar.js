@@ -80,6 +80,9 @@ class NavBar extends Component{
 						<li className="nav-item">
 							<Link to='/site/scoreboard' className="nav-link">Результаты</Link>
 						</li>
+						<li className="nav-item">
+							<Link to='/site/info' className="nav-link">Дополнительно</Link>
+						</li>
 					</ul>
 					{this.props.isAuth ?
 						<form className="form-inline" onSubmit={this.SendFlag}>
