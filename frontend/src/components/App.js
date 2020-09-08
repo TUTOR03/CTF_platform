@@ -32,7 +32,7 @@ class App extends Component{
 		fetch(endpoint, options)
 		.then(response => response.json())
 		.then(responseData =>{
-			this.setState({tasks:responseData},()=>{this.setState({is_loading:false})})
+			this.setState({tasks:responseData, is_loading:false})
 		})
 		.catch(error => console.log('Error: ' + error))
 	}
@@ -48,7 +48,7 @@ class App extends Component{
 				<BrowserRouter>
 					<NavBar isAuth={this.state.isAuth} UpdateToken={this.UpdateToken} GetTasks={this.GetTasks}/>
 					<Switch>
-						<Route exact path='/site/'render={() => <MainPage is_loading={this.state.is_loading} tasks={this.state.tasks} isAuth={this.state.isAuth} GetTasks={this.GetTasks} UpdateToken={this.UpdateToken}/>} />
+						<Route exact path='/site'render={() => <MainPage is_loading={this.state.is_loading} tasks={this.state.tasks} isAuth={this.state.isAuth} GetTasks={this.GetTasks} UpdateToken={this.UpdateToken}/>} />
 						<Route path='/site/task/:slug' render={({match})=><SingleTask isAuth={this.state.isAuth} match={match}/>}/>
 						<Route exact path='/site/login'render={() => <Login isAuth={this.state.isAuth} UpdateToken={this.UpdateToken}/>} />
 						<Route exact path='/site/register'render={() => <Register isAuth={this.state.isAuth} UpdateToken={this.UpdateToken}/>} />
