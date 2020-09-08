@@ -47,7 +47,11 @@ class App extends Component{
 				<BrowserRouter>
 					<NavBar isAuth={this.state.isAuth} UpdateToken={this.UpdateToken} GetTasks={this.GetTasks}/>
 					<Switch>
+<<<<<<< HEAD
 						<Route exact path='/site'render={() => <MainPage isAuth={this.state.isAuth} tasks={this.state.tasks} is_loading={this.state.is_loading} GetTasks={this.GetTasks} UpdateToken={this.UpdateToken}/>} />
+=======
+						<Route exact path='/site'render={() => <MainPage is_loading={this.state.is_loading} tasks={this.state.tasks} isAuth={this.state.isAuth} GetTasks={this.GetTasks} UpdateToken={this.UpdateToken}/>} />
+>>>>>>> 169abb999c0d3dec2ff829d1ae8519319c7a5875
 						<Route path='/site/task/:slug' render={({match})=><SingleTask isAuth={this.state.isAuth} match={match}/>}/>
 						<Route exact path='/site/login'render={() => <Login isAuth={this.state.isAuth} UpdateToken={this.UpdateToken}/>} />
 						<Route exact path='/site/register'render={() => <Register isAuth={this.state.isAuth} UpdateToken={this.UpdateToken}/>} />
