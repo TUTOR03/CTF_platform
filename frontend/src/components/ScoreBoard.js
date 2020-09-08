@@ -18,12 +18,11 @@ class ScoreBoard extends Component{
 		fetch(endpoint, options)
 		.then(response => response.json())
 		.then(responseData =>{
-			this.setState({scoreboard:responseData.scoreboard},()=>{this.setState({is_loading:false})})
+			this.setState({scoreboard:responseData.scoreboard, is_loading:false})
 		})
 		.catch(error => console.log('Error: ' + error))
 	}
 	componentDidMount(){
-		console.log('dadadadada')
 		this.GetScoreBoard()
 	}
 	render(){

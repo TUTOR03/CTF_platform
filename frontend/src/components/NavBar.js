@@ -36,7 +36,6 @@ class NavBar extends Component{
 				resolve('')
 			})
 			prom.then(()=>{
-				console.log('called')
 				this.props.GetTasks()
 			})
 		})

@@ -25,7 +25,7 @@ class SingleTask extends Component{
 		fetch(endpoint, options)
 		.then(response => response.json())
 		.then(responseData =>{
-			this.setState({task:responseData},()=>{this.setState({is_loading:false});console.log(this.state.task)})
+			this.setState({task:responseData, is_loading:false})
 		})
 		.catch(error => console.log('Error: ' + error))
 	}

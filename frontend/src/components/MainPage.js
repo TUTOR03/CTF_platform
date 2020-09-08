@@ -37,7 +37,7 @@ class MainPage extends Component{
 				)})}
 			</div>
 			:
-			''
+			<h1>LOADING...</h1>
 		);
 	}
 }
