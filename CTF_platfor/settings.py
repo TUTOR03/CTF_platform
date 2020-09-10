@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-=f6wlph6y1%c-8&&hfq7+s%h4(-n7g+^h5p%gqfu-)yl^$0s7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ibctf.upml.tech','80.240.25.179']
 #ALLOWED_HOSTS = []
