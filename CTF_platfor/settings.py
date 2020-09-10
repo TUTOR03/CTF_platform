@@ -25,8 +25,8 @@ SECRET_KEY = '-=f6wlph6y1%c-8&&hfq7+s%h4(-n7g+^h5p%gqfu-)yl^$0s7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ibctf.upml.tech','80.240.25.179']
-#ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['ibctf.upml.tech','80.240.25.179']
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-Ru'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Yekaterinburg'
 
@@ -129,6 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=(
+    os.path.join(BASE_DIR,'static'),
+)
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
